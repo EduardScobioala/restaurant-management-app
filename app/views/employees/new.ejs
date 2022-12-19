@@ -1,0 +1,44 @@
+<h2 class="page-header">New Employee</h2>
+
+<form action="/employees" method="POST">
+
+    <div class="form-item">
+        <label>Personal ID</label>
+        <input type="text" name="personId" value="<%= employee.personId %>">
+    </div>
+    <div class="form-item">
+        <label>First Name</label>
+        <input type="text" name="firstName" value="<%= employee.firstName %>">
+    </div>
+    <div class="form-item">
+        <label>Last Name</label>
+        <input type="text" name="lastName" value="<%= employee.lastName %>">
+    </div>
+
+    <div class="form-item">
+        <label>Work Post</label>
+        <select name="postId">
+            <% for ( let i = 0; i < posts.length; i++ ) { %>
+                <option> <%= posts[i].name %> </option>
+            <% } %>
+        </select>
+    </div>
+
+    <div class="form-item">
+        <label>Weekly Hours</label>
+        <input type="text" name="weeklyHours" value="<%= employee.weeklyHours %>">
+    </div>
+    <div class="form-item">
+        <label>Employment Period (years)</label>
+        <input type="text" name="employmentPeriod" value="<%= employee.employmentPeriod %>">
+    </div>
+    <div class="form-item">
+        <label>Base Salary</label>
+        <input type="text" name="baseSalary" value="<%= employee.baseSalary %>">
+    </div>
+
+    <div class="form-row form-row-end">
+        <a class="btn btn-danger" href="/employees">Cancel</a>
+        <button class="btn btn-primary" type="submit">Create</button>
+    </div>
+</form>

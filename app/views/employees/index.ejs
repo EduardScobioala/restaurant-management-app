@@ -1,0 +1,40 @@
+<h2 class="page-header">Search Employees</h2>
+<form action="/employees" method="GET">
+    <div class="form-item">
+        <label>Last Name</label>
+        <input type="text" name="lastName" value="<%= searchOptions.lastName %> ">
+    </div>
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<br>
+
+<table class="styled-table centered-container">
+    <thead>
+        <tr>
+            <th>Personal ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Work Post</th>
+            <th>Weekly Hours</th>
+            <th>Employment Period (years)</th>
+            <th>Base Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i = 0; i < employees.length; i++) { %>
+            <div>
+                <tr>
+                    <td> <%= employees[i].personId %> </td>
+                    <td> <%= employees[i].firstName %> </td>
+                    <td> <%= employees[i].lastName %> </td>
+                    <td> <%= employees[i].postId %> </td>
+                    <td> <%= employees[i].weeklyHours %> </td>
+                    <td> <%= employees[i].employmentPeriod %> </td>
+                    <td> <%= employees[i].baseSalary %> </td>
+                </tr>
+            </div>
+        <% } %>
+    </tbody>
+</table>
