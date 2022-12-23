@@ -1,0 +1,36 @@
+<h2 class="page-header">Search Employees</h2>
+<form action="/overtime" method="GET">
+    <div class="form-item">
+        <label>Month</label>
+        <input type="text" name="month" value="<%= searchOptions.month %> ">
+    </div>
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<br>
+
+<table class="styled-table centered-container">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Month</th>
+            <th>Year</th>
+            <th>Hours</th>
+            <th>Price per/h</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i = 0; i < overtime.length; i++) { %>
+            <div>
+                <tr>
+                    <td> <%= overtime[i].employeeId %> </td>
+                    <td> <%= overtime[i].month %> </td>
+                    <td> <%= overtime[i].year %> </td>
+                    <td> <%= overtime[i].hours %> </td>
+                    <td> <%= overtime[i].price %> </td>
+                </tr>
+            </div>
+        <% } %>
+    </tbody>
+</table>

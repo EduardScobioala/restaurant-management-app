@@ -1,0 +1,36 @@
+<h2 class="page-header">Search Employees</h2>
+<form action="/menu" method="GET">
+    <div class="form-item">
+        <label>Category</label>
+        <input type="text" name="category" value="<%= searchOptions.category %> ">
+    </div>
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<br>
+
+<table class="styled-table centered-container">
+    <thead>
+        <tr>
+            <th>Dish ID</th>
+            <th>Dish Name</th>
+            <th>Category</th>
+            <th>Weight (g)</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i = 0; i < menu.length; i++) { %>
+            <div>
+                <tr>
+                    <td> <%= menu[i].dishId %> </td>
+                    <td> <%= menu[i].dishName %> </td>
+                    <td> <%= menu[i].category %> </td>
+                    <td> <%= menu[i].weight %> </td>
+                    <td> <%= menu[i].price %> </td>
+                </tr>
+            </div>
+        <% } %>
+    </tbody>
+</table>

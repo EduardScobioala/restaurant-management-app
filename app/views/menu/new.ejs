@@ -1,0 +1,35 @@
+<h2 class="page-header">New Dish</h2>
+
+<form action="/menu" method="POST">
+
+    <div class="form-item">
+        <label>Dish ID</label>
+        <input type="text" name="dishId" value="<%= dish.dishId %>">
+    </div>
+    <div class="form-item">
+        <label>Dish Name</label>
+        <input type="text" name="dishName" value="<%= dish.dishName %>">
+    </div>
+    <div class="form-item">
+        <label>Category</label>
+        <select name="category">
+            <option>fast-food</option>
+            <option>salad</option>
+            <option>appetizer</option>
+            <option>main dish</option>
+        </select>
+    </div>
+    <div class="form-item">
+        <label>Weight (g)</label>
+        <input type="text" name="weight" value="<%= dish.weight %>">
+    </div>
+    <div class="form-item">
+        <label>Price</label>
+        <input type="text" name="price" value="<%= dish.price %>">
+    </div>
+
+    <div class="form-row form-row-end">
+        <a class="btn btn-danger" href="/menu">Cancel</a>
+        <button class="btn btn-primary" type="submit">Create</button>
+    </div>
+</form>

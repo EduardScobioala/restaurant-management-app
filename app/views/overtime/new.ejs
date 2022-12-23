@@ -1,0 +1,47 @@
+<h2 class="page-header">Add Overtime Hours</h2>
+
+<form action="/overtime" method="POST">
+
+    <div class="form-item">
+        <label>Employee</label>
+        <select name="employeeId">
+            <% for ( let i = 0; i < employees.length; i++ ) { %>
+                <option> <%= employees[i].firstName + " " + employees[i].lastName %> </option>
+            <% } %>
+        </select>
+    </div>
+    <div class="form-item">
+        <label>Month</label>
+        <select name="month">
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>Octomber</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+    </div>
+    <div class="form-item">
+        <label>Year</label>
+        <input type="text" name="year" value="<%= overtime.year %>">
+    </div>
+    <div class="form-item">
+        <label>Hours</label>
+        <input type="text" name="hours" value="<%= overtime.hours %>">
+    </div>
+    <div class="form-item">
+        <label>Price per/h</label>
+        <input type="text" name="price" value="<%= overtime.price %>">
+    </div>
+
+    <div class="form-row form-row-end">
+        <a class="btn btn-danger" href="/overtime">Cancel</a>
+        <button class="btn btn-primary" type="submit">Create</button>
+    </div>
+</form>

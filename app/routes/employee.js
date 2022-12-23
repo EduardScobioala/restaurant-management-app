@@ -46,7 +46,6 @@ router.get("/new", async (req, res) => {
 // Create Employee route
 router.post("/", async (req, res) => {
     const posts = await Employee.getPosts();
-    console.log(posts);
     const rawEmployee = {
         personId: req.body.personId,
         firstName: req.body.firstName,

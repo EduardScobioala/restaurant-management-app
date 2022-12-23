@@ -5,8 +5,9 @@ const bodyParser = require("body-parser");
 
 const indexRouter = require("./routes/index");
 const employeesRouter = require("./routes/employee");
-// const menuRouter = require("./routes/menu");
+const menuRouter = require("./routes/menu");
 // const billsRouter = require("./routes/bill");
+const overtimeRouter = require("./routes/overtime");
 
 // layout/views setup
 app.set("view engine", "ejs");
@@ -28,8 +29,9 @@ db.connect((error) => {
 // main router
 app.use("/app", indexRouter);
 app.use("/employees", employeesRouter);
-// app.use("/menu", menuRouter);
+app.use("/menu", menuRouter);
 // app.use("/bills", billsRouter);
+app.use("/overtime", overtimeRouter);
 
 app.listen(8080, () => {
     console.log("Listening on port 8080...");
