@@ -1,0 +1,26 @@
+<h2 class="page-header">Salary Payroll</h2>
+
+<br>
+
+<table class="styled-table centered-container">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Monthly Hours</th>
+            <th>Monthly Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i = 0; i < employees.length; i++) { %>
+            <div>
+                <tr>
+                    <td> <%= employees[i].firstName %> </td>
+                    <td> <%= employees[i].lastName %> </td>
+                    <td> <%= employees[i].monthlyHours %> </td>
+                    <td> <%= employees[i].baseSalary %> </td>
+                </tr>
+            </div>
+        <% } %>
+    </tbody>
+</table>

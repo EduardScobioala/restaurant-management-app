@@ -1,7 +1,83 @@
 <h2 class="page-header"> Additional Utilities </h2>
 
-<div class="cards">
-    <div class="card">
-        <a href="app">Next page...</a>
-    </div>
+<div class="card">
+    <a href="salary">Payroll Statement</a>
 </div>
+
+<div>
+    <br>
+    <br>
+</div>
+
+<form action="/salary" method="POST">
+
+    <div>
+        <div class="form-item">
+            <label>Month</label>
+            <select name="month">
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>Octomber</option>
+                <option>November</option>
+                <option>December</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <label>Year</label>
+            <input type="text" name="year">
+        </div>
+        
+        <div class="form-row form-row-end">
+            <button class="btn btn-primary" type="submit">Overtime Payroll Statement</button>
+        </div>
+        
+    </div>
+
+</form>
+
+
+<form action="/income/dailyIncome" method="POST">
+
+    <div class="form-item">
+        <label for="date">Date</label>
+        <input type="date" name="date">
+    </div>
+        
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Daily Income</button>
+    </div>
+
+</form>
+
+<form action="/income/monthIncome" method="POST">
+
+    <div class="form-item">
+        <label>Month</label>
+        <select name="month">
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>Octomber</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+    </div>
+        
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Monthly Income</button>
+    </div>
+
+</form>

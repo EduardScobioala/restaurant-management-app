@@ -1,0 +1,52 @@
+<h2 class="page-header">Add Overtime Hours</h2>
+
+<form action="/bills" method="POST">
+
+    <div class="form-item">
+        <label>Waiter</label>
+        <select name="employeeId">
+            <% for ( let i = 0; i < employees.length; i++ ) { %>
+                <option> <%= employees[i].firstName + " " + employees[i].lastName %> </option>
+            <% } %>
+        </select>
+    </div>
+    <div class="form-item">
+        <label for="date">Date</label>
+        <input type="date" name="date" value="<%= bill.date %>">
+    </div>
+    <div class="form-item">
+        <label>Dish</label>
+        <div class="form-item" id="dishes"></div>
+
+        <select name="dishName" id="dishName">
+            <% for ( let i = 0; i < menu.length; i++ ) { %>
+                <option> <%= menu[i].dishName %> </option>
+            <% } %>
+        </select>
+        <div class="form-row form-row-end">
+            <button class="btn btn-primary" type="button" onclick="addDish()">Add</button>
+        </div>
+    </div>
+
+    <div class="form-row form-row-end">
+        <a class="btn btn-danger" href="/bills">Cancel</a>
+        <button class="btn btn-primary" type="submit">Create</button>
+    </div>
+</form>
+
+<script>
+    function addDish() {
+        const selectDish = document.getElementById("dishName").value;
+
+        // Create a new lable for the added dish
+        const newDish = document.createElement("input");
+        newDish.type = "text";
+        newDish.name = "dish"
+        newDish.value = selectDish;
+        newDish.setAttribute("readonly", "");
+
+      
+        // Add the new input element to the page
+        document.getElementById("dishes").appendChild(newDish);
+    }
+</script>

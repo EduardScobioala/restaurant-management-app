@@ -6,8 +6,10 @@ const bodyParser = require("body-parser");
 const indexRouter = require("./routes/index");
 const employeesRouter = require("./routes/employee");
 const menuRouter = require("./routes/menu");
-// const billsRouter = require("./routes/bill");
+const billsRouter = require("./routes/bill");
 const overtimeRouter = require("./routes/overtime");
+const salaryRouter = require("./routes/salary");
+const incomeRouter = require("./routes/income");
 
 // layout/views setup
 app.set("view engine", "ejs");
@@ -30,8 +32,10 @@ db.connect((error) => {
 app.use("/app", indexRouter);
 app.use("/employees", employeesRouter);
 app.use("/menu", menuRouter);
-// app.use("/bills", billsRouter);
+app.use("/bills", billsRouter);
 app.use("/overtime", overtimeRouter);
+app.use("/salary", salaryRouter);
+app.use("/income", incomeRouter);
 
 app.listen(8080, () => {
     console.log("Listening on port 8080...");

@@ -33,7 +33,7 @@ router.get("/new", async (req, res) => {
         firstName: "",
         lastName: "",
         postId: "",
-        weeklyHours: "",
+        monthlyHours: "",
         employmentPeriod: "",
         baseSalary: ""
     }
@@ -51,7 +51,7 @@ router.post("/", async (req, res) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         postId: req.body.postId,
-        weeklyHours: req.body.weeklyHours,
+        monthlyHours: req.body.monthlyHours,
         employmentPeriod: req.body.employmentPeriod,
         baseSalary: req.body.baseSalary,
     }
@@ -97,10 +97,10 @@ function _dataValidation(employee, posts) {
     employee.postId = post.postId;
 
     // Weekly Hours
-    employee.weeklyHours = employee.weeklyHours.trim();
-    if (employee.weeklyHours.length == 0 ) throw Error("Weekly Hours field mandatory");
-    if (!/^\d+$/.test(employee.weeklyHours)) throw Error("Weekly Hours field can be made out of only digits");
-    if (employee.weeklyHours.length > 2 ) throw Error("Weekly Hours must not exceed 2 digits");
+    employee.monthlyHours = employee.monthlyHours.trim();
+    if (employee.monthlyHours.length == 0 ) throw Error("Weekly Hours field mandatory");
+    if (!/^\d+$/.test(employee.monthlyHours)) throw Error("Weekly Hours field can be made out of only digits");
+    if (employee.monthlyHours.length > 4 ) throw Error("Weekly Hours must not exceed 4 digits");
 
     // Employment Period
     employee.employmentPeriod = employee.employmentPeriod.trim();

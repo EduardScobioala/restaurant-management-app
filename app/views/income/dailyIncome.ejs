@@ -1,0 +1,24 @@
+<h2 class="page-header">Date: <%= date %></h2>
+
+<br>
+
+<table class="styled-table centered-container">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Daily Income</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i = 0; i < income.length; i++) { %>
+            <div>
+                <tr>
+                    <td> <%= income[i].firstName %> </td>
+                    <td> <%= income[i].lastName %> </td>
+                    <td> <%= income[i].earnings %> </td>
+                </tr>
+            </div>
+        <% } %>
+    </tbody>
+</table>

@@ -1,0 +1,28 @@
+<h2 class="page-header">Search Employees</h2>
+
+<br>
+
+<table class="styled-table centered-container">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Month</th>
+            <th>Year</th>
+            <th>Overtime Payment</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i = 0; i < payroll.length; i++) { %>
+            <div>
+                <tr>
+                    <td> <%= payroll[i].firstName %> </td>
+                    <td> <%= payroll[i].lastName %> </td>
+                    <td> <%= payroll[i].month %> </td>
+                    <td> <%= payroll[i].year %> </td>
+                    <td> <%= payroll[i].overtimePayment %> </td>
+                </tr>
+            </div>
+        <% } %>
+    </tbody>
+</table>

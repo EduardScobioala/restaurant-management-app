@@ -20,8 +20,8 @@ class Employee {
     static async saveEmployees(employee) {
         const db = new DBManager;
 
-        const sql = "INSERT INTO employee (personId, firstName, lastName, postId, weeklyHours, employmentPeriod, baseSalary) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        const params = [employee.personId, employee.firstName, employee.lastName, employee.postId, employee.weeklyHours, employee.employmentPeriod, employee.baseSalary];
+        const sql = "INSERT INTO employee (personId, firstName, lastName, postId, monthlyHours, employmentPeriod, baseSalary) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        const params = [employee.personId, employee.firstName, employee.lastName, employee.postId, employee.monthlyHours, employee.employmentPeriod, employee.baseSalary];
 
         return await db.runQuery(sql, params);
     }

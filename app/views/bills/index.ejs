@@ -1,0 +1,34 @@
+<h2 class="page-header">Search Bills</h2>
+<form action="/bills" method="GET">
+    <div class="form-item">
+        <label>Waiter Last Name</label>
+        <input type="text" name="lastName" value="<%= searchOptions.lastName %> ">
+    </div>
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<br>
+
+<table class="styled-table centered-container">
+    <thead>
+        <tr>
+            <th>Bill ID</th>
+            <th>Waiter</th>
+            <th>Date</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i = 0; i < bills.length; i++) { %>
+            <div>
+                <tr>
+                    <td> <%= bills[i].billId %> </td>
+                    <td> <%= bills[i].waiterId %> </td>
+                    <td> <%= bills[i].date %> </td>
+                    <td> <%= bills[i].price %> </td>
+                </tr>
+            </div>
+        <% } %>
+    </tbody>
+</table>
